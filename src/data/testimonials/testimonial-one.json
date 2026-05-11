@@ -1,0 +1,66 @@
+[
+  {
+    "id": "1",
+    "name": {
+      "en": "Sally Ramsey",
+      "mk": "Славица Ристовска"
+    },
+    "designation": {
+      "en": "Beauty Blogger",
+      "mk": "Бјути блогер"
+    },
+    "image": "/assets/images/testimonial/testimonial-1-80x80.png",
+    "content": {
+      "en": "The quality of their makeup products is unmatched. My skin has never looked so radiant and flawless!",
+      "mk": "Квалитетот на нивните шминкерски производи е ненадминлив. Мојата кожа никогаш не изгледала толку блескаво и беспрекорно!"
+    }
+  },
+  {
+    "id": "2",
+    "name": {
+      "en": "Lois Thompson",
+      "mk": "Лидија Томовска"
+    },
+    "designation": {
+      "en": "Makeup Artist",
+      "mk": "Шминкер"
+    },
+    "image": "/assets/images/testimonial/testimonial-2-80x80.png",
+    "content": {
+      "en": "I’ve been using their makeup for my clients, and the results are always stunning. Highly recommend!",
+      "mk": "Го користам нивниот шминкерски производ за моите клиенти, и резултатите секогаш се неверојатни. Силно препорачувам!"
+    }
+  },
+  {
+    "id": "3",
+    "name": {
+      "en": "Florence Pittman",
+      "mk": "Фросина Петровска"
+    },
+    "designation": {
+      "en": "Model",
+      "mk": "Модел"
+    },
+    "image": "/assets/images/testimonial/testimonial-3-80x80.png",
+    "content": {
+      "en": "Their long-lasting lipsticks and glowing foundations are a game changer for photoshoots. They deliver a flawless look that lasts for hours without the need for touch-ups.",
+      "mk": "Нивните долготрајни кармини и блескави пудри се револуционерни за фотосесии. Тие обезбедуваат изглед што трае со часови без потреба од корекции."
+    }
+  },
+  {
+    "id": "4",
+    "name": {
+      "en": "Anais Coulon",
+      "mk": "Ана Кулевска"
+    },
+    "designation": {
+      "en": "Influencer",
+      "mk": "Инфлуенсер"
+    },
+    "image": "/assets/images/testimonial/testimonial-4-80x80.png",
+    "content": {
+      "en": "Five-star products and amazing customer service! They always ensure I get the best advice for my look.",
+      "mk": "Пет ѕвездички за производите и неверојатна корисничка поддршка! Секогаш се грижат да добијам најдобар совет за мојот изглед."
+    }
+  }
+]
