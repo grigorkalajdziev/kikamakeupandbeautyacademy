@@ -6,7 +6,10 @@ import { Navigation, Autoplay } from "swiper/modules";
 import { useLocalization } from "../../context/LocalizationContext";
 import type { HeroSlide } from "../../types";
 
-interface Props { sliderData: HeroSlide[]; spaceBottomClass?: string; }
+interface Props {
+  sliderData: HeroSlide[];
+  spaceBottomClass?: string;
+}
 
 const HeroSliderTwo = ({ sliderData, spaceBottomClass }: Props) => {
   const { t } = useLocalization();
@@ -15,22 +18,47 @@ const HeroSliderTwo = ({ sliderData, spaceBottomClass }: Props) => {
 
   return (
     <div className={`hero-slider-two ${spaceBottomClass ?? ""}`}>
-      <Swiper modules={[Navigation, Autoplay]} loop autoplay={{ delay: 5000, disableOnInteraction: false }}
-        navigation={{ nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }}>
+      <Swiper
+        modules={[Navigation, Autoplay]}
+        loop
+        autoplay={{ delay: 5000, disableOnInteraction: false }}
+        navigation={{
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        }}
+      >
         {sliderData.map((slide, i) => (
           <SwiperSlide key={i}>
-            <div className="hero-slider-two__slide" style={{ backgroundColor: slide.bgcolor }}>
-              <div className="hero-slider-two__image">
-                <Image src={slide.image} alt="" fill className="object-cover" priority={i === 0} sizes="100vw" />
-              </div>
-              <div className="hero-slider-two__content">
-                <h5 className="sub-title">{t(slide.subtitle)}</h5>
-                <h1 className="title" dangerouslySetInnerHTML={{ __html: t(slide.title) }} />
-                <div className="slider-link mt-8">
-                  <Link href={slide.url} className="lezada-button lezada-button--medium"
-                    onClick={() => setLoading(true)}>
-                    {loading ? <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" /> : t("shop_now")}
+            <div className="w-full bg-white py-16">
+              <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center">
+                {/* TEXT */}
+                <div className="w-full lg:w-1/2 z-10 text-center lg:text-left">
+                  <h5 className="text-sm tracking-widest uppercase text-gray-500 mb-4">
+                    {t(slide.subtitle)}
+                  </h5>
+
+                  <h1
+                    className="text-3xl md:text-5xl font-light mb-6"
+                    dangerouslySetInnerHTML={{ __html: t(slide.title) }}
+                  />
+
+                  <Link
+                    href={slide.url}
+                    className="inline-block border border-black px-6 py-3 text-sm uppercase hover:bg-black hover:text-white transition"
+                  >
+                    {t("shop_now")}
                   </Link>
+                </div>
+
+                {/* IMAGE */}
+                <div className="w-full lg:w-1/2 relative h-[400px] md:h-[700px] mt-10 lg:mt-0">
+                  <Image
+                    src={slide.image}
+                    alt=""
+                    fill
+                    className="object-contain"
+                    priority={i === 0}
+                  />
                 </div>
               </div>
             </div>
