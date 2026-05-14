@@ -21,16 +21,25 @@ const Navigation = () => {
   const { asPath } = useRouter();
 
   return (
-    <nav className="one-line-nav">
-      <ul className="one-line-nav__list">
-        <li className="one-line-nav__item">
-          <Link href="/home/trending" className={`one-line-nav__link${asPath.startsWith("/home") ? " active" : ""}`} aria-label={t("home")}>
+    /* 1. Added the missing 'header-content__navigation' class required by your CSS */
+    <nav className="header-content__navigation one-line-nav">
+      
+      <ul>
+        <li>
+          <Link 
+            href="/home/trending" 
+            className={asPath.startsWith("/home") ? "active" : ""} 
+            aria-label={t("home")}
+          >
             <IoIosHome size={20} />
           </Link>
         </li>
         {navItems.map(({ href, key }) => (
-          <li key={key} className="one-line-nav__item">
-            <Link href={href} className={`one-line-nav__link${asPath === href ? " active" : ""}`}>
+          <li key={key}>
+            <Link 
+              href={href} 
+              className={asPath === href ? "active" : ""}
+            >
               {t(key)}
             </Link>
           </li>

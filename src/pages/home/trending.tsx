@@ -23,7 +23,7 @@ const Trending = ({ products }: { products: Product[] }) => {
 
   return (
     <LayoutFive>
-      <HeroSliderTwo sliderData={heroSliderData as any} spaceBottomClass="mb-0" />
+      <HeroSliderTwo sliderData={heroSliderData as any} spaceBottomClass="mb-12" />
       <CategorySlider categoryData={categoryData as any} spaceBottomClass="mb-24" />
       <SectionTitleOne title={t("spring_summer")} subtitle={subtitle} />
       <div className="mb-24">

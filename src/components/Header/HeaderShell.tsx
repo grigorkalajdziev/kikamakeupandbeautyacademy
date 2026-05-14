@@ -69,8 +69,9 @@ const HeaderShell = ({ aboutOverlay = true, cartItems, wishlistItems }: HeaderSh
             </div>
 
             {/* Nav desktop */}
-            <Navigation />
-
+            
+              <Navigation />
+           
             {/* Icons */}
             <div className="pl-4">
               {/* Desktop */}
