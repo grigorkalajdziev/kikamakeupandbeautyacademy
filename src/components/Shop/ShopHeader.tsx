@@ -17,7 +17,7 @@ interface Props {
 const ShopHeader = ({ shopTopFilterStatus, setShopTopFilterStatus, getFilterSortParams, sortedProductCount, productCount, getLayout, listMode = true }: Props) => {
   const { t } = useLocalization();
   return (
-    <div className="shop-header container-wide">
+    <div className="shop-header container-wide flex items-center justify-between">
       <p className="text-xs text-muted">{t("showing")} {sortedProductCount} {t("of")} {productCount} {t("result")}</p>
       <div className="flex items-center gap-4">
         <div className="filter-dropdown">

@@ -31,14 +31,14 @@ const ProductGrid = ({ product, discountedPrice, productPrice, cartItem, wishlis
             )}
           </Link>
           <div className="product-grid__floating-badges">
-            {product.discount && product.discount > 0 && <span className="onsale">-{product.discount}%</span>}
+            {(product.discount ?? 0) > 0 && <span className="onsale">-{product.discount}%</span>}
             {product.new && <span className="hot">{t("new")}</span>}
             {product.stock === 0 && <span className="out-of-stock">{t("out")}</span>}
           </div>
           <div className="product-grid__floating-icons">
             <button onClick={wishlistItem ? deleteFromWishlist : addToWishlist} className={wishlistItem ? "active" : ""} title={wishlistItem ? t("added_to_wishlist") : t("add_to_wishlist")}><IoIosHeartEmpty /></button>
             <button onClick={compareItem ? deleteFromCompare : addToCompare} className={compareItem ? "active" : ""} title={compareItem ? t("added_to_compare") : t("add_to_compare")}><IoIosShuffle /></button>
-            <button onClick={() => setModalShow(true)} className="hidden lg:flex" title={t("quick_view")}><IoIosSearch /></button>
+            <button onClick={() => setModalShow(true)} className="hidden lg:flex lg:justify-center lg:items-center" title={t("quick_view")}><IoIosSearch /></button>
           </div>
         </div>
 
@@ -50,7 +50,7 @@ const ProductGrid = ({ product, discountedPrice, productPrice, cartItem, wishlis
               <a href={product.affiliateLink} target="_blank" rel="noreferrer">{t("buy_now")}</a>
             ) : product.variation?.length ? (
               <Link href={`/shop/product-basic/${product.slug}`}>{t("select_option")}</Link>
-            ) : product.stock && product.stock > 0 ? (
+            ) : (product.stock ?? 0) > 0 ? (
               <button onClick={() => addToCart(product, addToast, 1, null, null)} disabled={cartItem !== undefined && cartItem.quantity >= (cartItem.stock ?? Infinity)}>
                 {cartItem ? t("added_to_cart") : t("add_to_cart")}
               </button>
