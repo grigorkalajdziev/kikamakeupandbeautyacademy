@@ -24,7 +24,7 @@ Partnerships with local beauty studios and professionals
 Continuous curriculum improvements based on industry standards
 🛠️ Tech Stack
 
-Next.js (React Framework)
+Next.js (React Framework) 
 TypeScript
 Tailwind CSS
 Firebase (Authentication & Database)
